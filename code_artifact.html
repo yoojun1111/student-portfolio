@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>윤서하 | 솔담대학교 경영정보학과 데이터 포트폴리오 (가상)</title>
+  <meta name="description" content="솔담대학교 경영정보학과 가상의 대학생 윤서하의 모아빛에너지 지원용 데이터 분석 포트폴리오입니다." />
+  <style>
+    :root {
+      --cream-bg: #F7F3E9;
+      --cream-surface: #FFFDF8;
+      --cream-soft: #EDE6D6;
+      --cream-border: #DDD4C0;
+      --green-deep: #1B4332;
+      --green-mid: #2D6A4F;
+      --green-sage: #52796F;
+      --green-tint: #E4EFE9;
+      --wood-warm: #B87D4B;
+      --ink-main: #172A22;
+      --ink-muted: #4C6057;
+      --shadow-soft: 0 12px 32px rgba(27, 67, 50, 0.08);
+      --shadow-card: 0 6px 20px rgba(27, 67, 50, 0.06);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --max-width: 1120px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--cream-bg);
+      color: var(--ink-main);
+      line-height: 1.65;
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--green-mid);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max-width));
+      margin-inline: auto;
+    }
+
+    /* Fictional Notice Banner */
+    .fictional-banner {
+      background-color: var(--green-deep);
+      color: #F4EFE4;
+      font-size: 0.85rem;
+      padding: 0.55rem 1rem;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+
+    .fictional-banner strong {
+      color: #D8F3DC;
+      font-weight: 700;
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: rgba(247, 243, 233, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--cream-border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 800;
+      font-size: 1.08rem;
+      color: var(--green-deep);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cream-surface);
+      font-size: 0.95rem;
+      font-weight: 800;
+      box-shadow: 0 4px 10px rgba(27, 67, 50, 0.2);
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .nav-link {
+      padding: 0.5rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background-color: var(--green-tint);
+      color: var(--green-deep);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid var(--cream-border);
+      background-color: var(--cream-surface);
+      color: var(--green-deep);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .nav-mobile {
+      display: none;
+      border-top: 1px solid var(--cream-border);
+      background-color: var(--cream-surface);
+      padding: 0.75rem 1rem 1rem;
+    }
+
+    .nav-mobile.is-open {
+      display: block;
+    }
+
+    .nav-mobile-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-mobile .nav-link {
+      display: block;
+      padding: 0.7rem 0.9rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Hero / Introduction Section */
+    .hero-section {
+      padding: 4rem 0 4.5rem;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+    }
+
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--green-tint);
+      color: var(--green-deep);
+      border: 1px solid rgba(27, 67, 50, 0.14);
+      padding: 0.38rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--green-mid);
+    }
+
+    .hero-title {
+      margin: 0 0 1.15rem;
+      font-size: clamp(1.95rem, 3.6vw, 2.85rem);
+      line-height: 1.24;
+      letter-spacing: -0.03em;
+      color: var(--green-deep);
+      font-weight: 800;
+    }
+
+    .hero-title .accent-underline {
+      background: linear-gradient(180deg, transparent 66%, rgba(82, 121, 111, 0.25) 66%);
+      padding-inline: 2px;
+    }
+
+    .hero-desc {
+      margin: 0 0 1.65rem;
+      color: var(--ink-muted);
+      font-size: 1.04rem;
+      max-width: 56ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.78rem 1.35rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 1.5px solid transparent;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--green-deep);
+      color: var(--cream-surface);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--green-mid);
+    }
+
+    .btn-secondary {
+      background-color: var(--cream-surface);
+      color: var(--green-deep);
+      border-color: var(--green-deep);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--green-tint);
+    }
+
+    .btn-subtle {
+      background-color: var(--cream-soft);
+      color: var(--green-deep);
+      border-color: var(--cream-border);
+      padding: 0.52rem 0.95rem;
+      font-size: 0.86rem;
+    }
+
+    .btn-subtle:hover {
+      background-color: var(--green-tint);
+      border-color: var(--green-sage);
+    }
+
+    .hero-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .meta-card {
+      background-color: var(--cream-surface);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 0.95rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--green-sage);
+      margin-bottom: 0.2rem;
+    }
+
+    .meta-value {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--ink-main);
+    }
+
+    /* Data Studio Illustration Column */
+    .hero-visual-col {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .scene-stage {
+      width: 100%;
+      max-width: 500px;
+      perspective: 1000px;
+      padding: 1.25rem 0.5rem 0.75rem;
+      position: relative;
+    }
+
+    .scene-motion {
+      width: 100%;
+      display: block;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    .scene-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 18px 26px rgba(27, 67, 50, 0.14));
+    }
+
+    .scene-info-card {
+      width: 100%;
+      max-width: 500px;
+      background-color: var(--cream-surface);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.15rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      z-index: 4;
+    }
+
+    .scene-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.65rem;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px dashed var(--cream-border);
+    }
+
+    .motion-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--green-deep);
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: var(--green-mid);
+      flex-shrink: 0;
+    }
+
+    .status-dot.is-paused {
+      background-color: var(--wood-warm);
+    }
+
+    .scene-caption {
+      margin: 0;
+      font-size: 0.87rem;
+      color: var(--ink-muted);
+      line-height: 1.58;
+    }
+
+    .scene-caption strong {
+      color: var(--green-deep);
+    }
+
+    /* Section Common */
+    .section {
+      padding: 4rem 0;
+      scroll-margin-top: 76px;
+    }
+
+    .section-alt {
+      background-color: var(--cream-soft);
+      border-top: 1px solid var(--cream-border);
+      border-bottom: 1px solid var(--cream-border);
+    }
+
+    .section-header {
+      margin-bottom: 2.2rem;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--green-mid);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      margin: 0 0 0.45rem;
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      color: var(--green-deep);
+      letter-spacing: -0.025em;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      color: var(--ink-muted);
+      font-size: 0.98rem;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.35rem;
+    }
+
+    .project-card {
+      background-color: var(--cream-surface);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .project-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background-color: var(--green-tint);
+      color: var(--green-deep);
+    }
+
+    .project-period {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    .project-title {
+      margin: 0 0 0.6rem;
+      font-size: 1.15rem;
+      line-height: 1.38;
+      color: var(--green-deep);
+      font-weight: 800;
+    }
+
+    .project-summary {
+      margin: 0 0 1rem;
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+      flex-grow: 1;
+    }
+
+    .project-metric {
+      background-color: var(--cream-bg);
+      border-left: 3.5px solid var(--green-mid);
+      padding: 0.65rem 0.85rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0 0 1.25rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-item {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--green-mid);
+      background-color: var(--cream-bg);
+      border: 1px solid var(--cream-border);
+      padding: 0.22rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    .project-card .btn-secondary {
+      width: 100%;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.35rem;
+    }
+
+    .skill-card {
+      background-color: var(--cream-surface);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .skill-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.1rem;
+      color: var(--green-deep);
+      font-weight: 800;
+    }
+
+    .skill-card p {
+      margin: 0 0 1.15rem;
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+    }
+
+    .skill-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .skill-row-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--ink-main);
+      margin-bottom: 0.3rem;
+    }
+
+    .skill-level {
+      color: var(--green-mid);
+    }
+
+    .skill-track {
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--cream-soft);
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green-sage));
+    }
+
+    /* Activities Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline-item {
+      background-color: var(--cream-surface);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.5rem;
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 1.25rem;
+      align-items: start;
+      box-shadow: var(--shadow-card);
+    }
+
+    .timeline-date {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--green-deep);
+      background-color: var(--green-tint);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .timeline-org {
+      margin: 0 0 0.25rem;
+      font-size: 1.06rem;
+      font-weight: 800;
+      color: var(--green-deep);
+    }
+
+    .timeline-role {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--wood-warm);
+      margin-bottom: 0.45rem;
+    }
+
+    .timeline-desc {
+      margin: 0;
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: linear-gradient(135deg, var(--green-deep), #24543F);
+      color: var(--cream-surface);
+      border-radius: var(--radius-lg);
+      padding: 2.35rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 2rem;
+      align-items: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card h2 {
+      margin: 0 0 0.65rem;
+      font-size: clamp(1.45rem, 2.5vw, 1.9rem);
+      color: #FFFDF8;
+    }
+
+    .contact-card p {
+      margin: 0 0 1.25rem;
+      color: #DCECE3;
+      font-size: 0.97rem;
+    }
+
+    .contact-email-box {
+      background-color: rgba(255, 253, 248, 0.12);
+      border: 1px solid rgba(255, 253, 248, 0.25);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .contact-email-label {
+      font-size: 0.82rem;
+      color: #CBE4D6;
+      font-weight: 600;
+    }
+
+    .contact-email-address {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #FFFDF8;
+      word-break: break-all;
+    }
+
+    .contact-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .btn-cream {
+      background-color: var(--cream-bg);
+      color: var(--green-deep);
+      border-color: var(--cream-bg);
+    }
+
+    .btn-cream:hover {
+      background-color: #FFFFFF;
+    }
+
+    .btn-outline-light {
+      background-color: transparent;
+      color: #FFFDF8;
+      border-color: rgba(255, 253, 248, 0.55);
+    }
+
+    .btn-outline-light:hover {
+      background-color: rgba(255, 253, 248, 0.14);
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 2rem 0 2.5rem;
+      border-top: 1px solid var(--cream-border);
+      color: var(--ink-muted);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .site-footer p {
+      margin: 0.25rem 0;
+    }
+
+    /* Modal Dialog */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(18, 38, 29, 0.62);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      z-index: 100;
+    }
+
+    .modal-backdrop.is-open {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: min(100%, 640px);
+      max-height: 88vh;
+      overflow-y: auto;
+      background-color: var(--cream-surface);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: 0 24px 56px rgba(18, 38, 29, 0.28);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--cream-border);
+    }
+
+    .modal-close {
+      background-color: var(--cream-soft);
+      color: var(--green-deep);
+      border: 1px solid var(--cream-border);
+      border-radius: 10px;
+      padding: 0.45rem 0.8rem;
+      font-weight: 800;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .modal-close:hover {
+      background-color: var(--green-tint);
+    }
+
+    .modal-title {
+      margin: 0.45rem 0 0;
+      font-size: 1.32rem;
+      color: var(--green-deep);
+      line-height: 1.35;
+    }
+
+    .modal-section {
+      margin-bottom: 1.1rem;
+    }
+
+    .modal-section h4 {
+      margin: 0 0 0.35rem;
+      font-size: 0.94rem;
+      color: var(--green-deep);
+    }
+
+    .modal-section p,
+    .modal-section ul {
+      margin: 0;
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+    }
+
+    .modal-section ul {
+      padding-left: 1.2rem;
+    }
+
+    .modal-section li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--green-deep);
+      color: var(--cream-surface);
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(27, 67, 50, 0.25);
+      z-index: 120;
+      display: none;
+    }
+
+    .toast.is-visible {
+      display: block;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+      }
+
+      .hero-visual-col {
+        width: 100%;
+      }
+
+      .scene-stage {
+        max-width: 100%;
+        padding: 1rem 0.25rem 0.5rem;
+        overflow: hidden;
+      }
+
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-desktop {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .hero-section {
+        padding: 2.5rem 0 3.25rem;
+      }
+
+      .hero-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+      }
+
+      .contact-card {
+        padding: 1.65rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="fictional-banner" role="note">
+    <strong>가상 포트폴리오 안내:</strong> 이 페이지의 인물(윤서하), 솔담대학교, 모아빛에너지, 여울데이터랩, 별숲 데이터 챌린지 및 모든 이력은 시연용 가상 설정입니다.
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#intro">
+        <span class="brand-mark" aria-hidden="true">서하</span>
+        <span>윤서하 · MIS Portfolio</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="주요 메뉴">
+        <a class="nav-link active" href="#intro">소개</a>
+        <a class="nav-link" href="#projects">프로젝트</a>
+        <a class="nav-link" href="#skills">역량</a>
+        <a class="nav-link" href="#activities">활동 기록</a>
+        <a class="nav-link" href="#contact">연락처</a>
+      </nav>
+
+      <button
+        type="button"
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        메뉴 열기
+      </button>
+    </div>
+
+    <nav id="mobile-nav" class="nav-mobile" aria-label="모바일 메뉴">
+      <ul class="nav-mobile-list">
+        <li><a class="nav-link" href="#intro">소개</a></li>
+        <li><a class="nav-link" href="#projects">프로젝트</a></li>
+        <li><a class="nav-link" href="#skills">역량</a></li>
+        <li><a class="nav-link" href="#activities">활동 기록</a></li>
+        <li><a class="nav-link" href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. 소개 + 데이터 작업실 일러스트 -->
+    <section id="intro" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow-pill">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            <span>솔담대학교 경영정보학과 · 모아빛에너지 지원 (가상)</span>
+          </div>
+
+          <h1 class="hero-title">
+            데이터로 에너지의 흐름을 읽는 대학생,
+            <span class="accent-underline">윤서하</span>입니다.
+          </h1>
+
+          <p class="hero-desc">
+            솔담대학교 경영정보학과에서 데이터 분석과 정보시스템 설계를 전공하고 있습니다.
+            <strong>여울데이터랩</strong> 인턴십과 <strong>별숲 데이터 챌린지</strong> 경험을 바탕으로,
+            복잡한 전력·운영 데이터를 명확한 지표와 의사결정 도구로 바꾸는 일에 집중해 왔습니다.
+            <strong>모아빛에너지</strong>의 데이터 기반 에너지 운영과 친환경 전환에 실질적인 힘을 보태고 싶습니다.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">프로젝트 3개 보기</a>
+            <a class="btn btn-secondary" href="#contact">연락처 확인하기</a>
+          </div>
+
+          <div class="hero-meta-grid">
+            <div class="meta-card">
+              <span class="meta-label">소속 (가상)</span>
+              <span class="meta-value">솔담대 경영정보학과</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">인턴 경험 (가상)</span>
+              <span class="meta-value">여울데이터랩 분석팀</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">지원 기업 (가상)</span>
+              <span class="meta-value">모아빛에너지</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 귀여운 데이터 작업실 일러스트 (.scene-motion) -->
+        <div class="hero-visual-col">
+          <div class="scene-stage" id="scene-stage">
+            <div class="scene-motion" id="scene-motion">
+              <svg
+                class="scene-svg"
+                viewBox="0 0 520 410"
+                role="img"
+                aria-labelledby="studio-svg-title studio-svg-desc"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title id="studio-svg-title">윤서하의 귀여운 데이터 작업실 일러스트</title>
+                <desc id="studio-svg-desc">
+                  나무 책상 위에 듀얼 모니터, 데이터 차트를 바라보는 둥근 캐릭터, 초록 화분 식물, 따뜻한 머그컵이 놓인 입체감 있는 인라인 SVG 그림입니다.
+                </desc>
+                <defs>
+                  <linearGradient id="bgCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFFDF8" />
+                    <stop offset="100%" stop-color="#E7EFE9" />
+                  </linearGradient>
+                  <linearGradient id="deskTopGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#E2B788" />
+                    <stop offset="100%" stop-color="#C8935D" />
+                  </linearGradient>
+                  <linearGradient id="deskEdgeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#B07A46" />
+                    <stop offset="100%" stop-color="#8C5D32" />
+                  </linearGradient>
+                  <linearGradient id="monitorBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#265440" />
+                    <stop offset="100%" stop-color="#173729" />
+                  </linearGradient>
+                  <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#F6FBF8" />
+                    <stop offset="100%" stop-color="#DFF0E6" />
+                  </linearGradient>
+                  <radialGradient id="charFaceGrad" cx="38%" cy="32%" r="65%">
+                    <stop offset="0%" stop-color="#FFF9EE" />
+                    <stop offset="100%" stop-color="#F2DFC4" />
+                  </radialGradient>
+                  <linearGradient id="charBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#3A7D5E" />
+                    <stop offset="100%" stop-color="#1E4B38" />
+                  </linearGradient>
+                  <linearGradient id="potGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#D98B5F" />
+                    <stop offset="100%" stop-color="#B5683E" />
+                  </linearGradient>
+                  <linearGradient id="mugGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFFDF8" />
+                    <stop offset="100%" stop-color="#E5DAC5" />
+                  </linearGradient>
+                  <filter id="softShadow" x="-15%" y="-15%" width="130%" height="135%">
+                    <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#1B4332" flood-opacity="0.14" />
+                  </filter>
+                  <filter id="itemShadow" x="-20%" y="-20%" width="140%" height="145%">
+                    <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#1B4332" flood-opacity="0.16" />
+                  </filter>
+                </defs>
+
+                <!-- 부드러운 배경 작업실 프레임 -->
+                <rect x="24" y="20" width="472" height="364" rx="34" fill="url(#bgCardGrad)" stroke="#D8CEBA" stroke-width="2" />
+
+                <!-- 배경 창문 & 은은한 원형 빛 -->
+                <circle cx="415" cy="92" r="56" fill="#F4EAD5" opacity="0.9" />
+                <rect x="58" y="48" width="118" height="86" rx="16" fill="#F2ECE0" stroke="#DDD3BE" stroke-width="1.5" />
+                <line x1="117" y1="48" x2="117" y2="134" stroke="#DDD3BE" stroke-width="1.5" />
+                <line x1="58" y1="91" x2="176" y2="91" stroke="#DDD3BE" stroke-width="1.5" />
+                <circle cx="90" cy="70" r="10" fill="#E9C46A" opacity="0.65" />
+
+                <!-- 바닥 그림자 -->
+                <ellipse cx="260" cy="358" rx="188" ry="14" fill="#1B4332" opacity="0.12" />
+
+                <!-- 나무 책상 다리 -->
+                <rect x="86" y="274" width="18" height="82" rx="8" fill="#9A683B" />
+                <rect x="416" y="274" width="18" height="82" rx="8" fill="#8C5D32" />
+                <rect x="104" y="294" width="312" height="10" rx="5" fill="#A67446" opacity="0.7" />
+
+                <!-- 듀얼 모니터 (좌측: 에너지 차트 대시보드) -->
+                <g filter="url(#itemShadow)">
+                  <rect x="128" y="106" width="132" height="94" rx="14" fill="url(#monitorBodyGrad)" />
+                  <rect x="136" y="114" width="116" height="74" rx="8" fill="url(#screenGrad)" />
+                  <!-- 모니터 스탠드 -->
+                  <rect x="186" y="200" width="16" height="34" rx="5" fill="#1E4B38" />
+                  <ellipse cx="194" cy="236" rx="30" ry="6" fill="#173729" />
+                  <!-- 좌측 화면 차트 그래픽 -->
+                  <rect x="145" y="123" width="44" height="8" rx="4" fill="#2D6A4F" opacity="0.8" />
+                  <rect x="145" y="162" width="14" height="18" rx="4" fill="#74A58E" />
+                  <rect x="164" y="150" width="14" height="30" rx="4" fill="#40916C" />
+                  <rect x="183" y="140" width="14" height="40" rx="4" fill="#2D6A4F" />
+                  <rect x="202" y="154" width="14" height="26" rx="4" fill="#52B788" />
+                  <rect x="221" y="132" width="14" height="48" rx="4" fill="#1B4332" />
+                  <circle cx="233" cy="126" r="4" fill="#D98B5F" />
+                </g>
+
+                <!-- 듀얼 모니터 (우측: 분석 코드 & 추세선) -->
+                <g filter="url(#itemShadow)">
+                  <rect x="272" y="114" width="128" height="90" rx="14" fill="url(#monitorBodyGrad)" />
+                  <rect x="280" y="122" width="112" height="70" rx="8" fill="url(#screenGrad)" />
+                  <!-- 모니터 스탠드 -->
+                  <rect x="328" y="204" width="16" height="30" rx="5" fill="#1E4B38" />
+                  <ellipse cx="336" cy="236" rx="28" ry="6" fill="#173729" />
+                  <!-- 우측 화면 추세선 & 코드 라인 -->
+                  <polyline
+                    points="290,174 308,162 325,167 346,144 366,150 382,134"
+                    fill="none"
+                    stroke="#2D6A4F"
+                    stroke-width="3.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="346" cy="144" r="4" fill="#D98B5F" />
+                  <circle cx="382" cy="134" r="4" fill="#1B4332" />
+                  <rect x="290" y="132" width="38" height="5" rx="2.5" fill="#74A58E" />
+                  <rect x="290" y="141" width="28" height="5" rx="2.5" fill="#95BDA9" />
+                  <rect x="290" y="180" width="90" height="4" rx="2" fill="#C7DFD1" />
+                </g>
+
+                <!-- 나무 책상 상판 (입체감 베벨) -->
+                <g filter="url(#softShadow)">
+                  <rect x="52" y="238" width="416" height="32" rx="14" fill="url(#deskTopGrad)" />
+                  <path d="M52 256 C52 266, 60 272, 70 272 L450 272 C460 272, 468 266, 468 256 L468 260 C468 270, 460 278, 450 278 L70 278 C60 278, 52 270, 52 260 Z" fill="url(#deskEdgeGrad)" />
+                  <!-- 은은한 나무결 -->
+                  <line x1="88" y1="250" x2="152" y2="250" stroke="#B6804B" stroke-width="2" stroke-linecap="round" opacity="0.45" />
+                  <line x1="354" y1="252" x2="430" y2="252" stroke="#B6804B" stroke-width="2" stroke-linecap="round" opacity="0.45" />
+                </g>
+
+                <!-- 세이지 데스크 매트 & 미니 키보드 -->
+                <rect x="172" y="242" width="176" height="16" rx="8" fill="#52796F" opacity="0.35" />
+                <rect x="206" y="244" width="92" height="11" rx="5" fill="#FFFDF8" stroke="#C5D5CC" stroke-width="1.5" />
+                <ellipse cx="322" cy="250" rx="10" ry="5.5" fill="#FFFDF8" stroke="#C5D5CC" stroke-width="1.5" />
+
+                <!-- 둥근 캐릭터 (책상 중앙에서 집중하는 모습) -->
+                <g filter="url(#itemShadow)">
+                  <!-- 몸통 (짙은 초록 스웨터) -->
+                  <path d="M214 246 C214 210, 232 196, 260 196 C288 196, 306 210, 306 246 Z" fill="url(#charBodyGrad)" />
+                  <!-- 스웨터 칼라 -->
+                  <ellipse cx="260" cy="200" rx="16" ry="6" fill="#E7EFE9" />
+                  <!-- 머리 (둥글고 부드러운 크림톤) -->
+                  <circle cx="260" cy="172" r="34" fill="url(#charFaceGrad)" />
+                  <!-- 부드러운 헤어 캡 -->
+                  <path d="M226 168 C227 142, 244 134, 260 134 C276 134, 293 142, 294 168 C284 157, 272 154, 260 155 C248 154, 236 157, 226 168 Z" fill="#234235" />
+                  <!-- 귀여운 새싹 포인트 -->
+                  <path d="M260 136 C260 124, 268 118, 274 120 C274 128, 267 134, 260 136 Z" fill="#52B788" />
+                  <path d="M260 136 C258 126, 250 122, 246 125 C247 132, 253 135, 260 136 Z" fill="#2D6A4F" />
+                  <!-- 표정 (미소, 볼터치, 동그란 안경) -->
+                  <circle cx="247" cy="172" r="9" fill="none" stroke="#1B4332" stroke-width="2" />
+                  <circle cx="273" cy="172" r="9" fill="none" stroke="#1B4332" stroke-width="2" />
+                  <line x1="256" y1="172" x2="264" y2="172" stroke="#1B4332" stroke-width="2" />
+                  <circle cx="247" cy="172" r="2.6" fill="#172A22" />
+                  <circle cx="273" cy="172" r="2.6" fill="#172A22" />
+                  <ellipse cx="238" cy="180" rx="5.5" ry="3" fill="#E79C82" opacity="0.55" />
+                  <ellipse cx="282" cy="180" rx="5.5" ry="3" fill="#E79C82" opacity="0.55" />
+                  <path d="M254 183 Q260 189 266 183" fill="none" stroke="#172A22" stroke-width="2.2" stroke-linecap="round" />
+                  <!-- 책상 위 둥근 손 -->
+                  <ellipse cx="230" cy="244" rx="11" ry="7" fill="#F2DFC4" />
+                  <ellipse cx="290" cy="244" rx="11" ry="7" fill="#F2DFC4" />
+                </g>
+
+                <!-- 화분 식물 (책상 좌측) -->
+                <g filter="url(#itemShadow)">
+                  <!-- 잎사귀 -->
+                  <path d="M96 206 C74 192, 68 168, 84 156 C98 164, 102 184, 98 206 Z" fill="#2D6A4F" />
+                  <path d="M100 206 C100 178, 114 156, 128 162 C132 178, 118 196, 102 206 Z" fill="#40916C" />
+                  <path d="M97 206 C90 176, 98 148, 110 144 C118 158, 112 182, 101 206 Z" fill="#1B4332" />
+                  <path d="M98 206 C110 194, 128 188, 134 198 C126 210, 110 212, 98 206 Z" fill="#52B788" />
+                  <!-- 화분 -->
+                  <path d="M78 204 L120 204 L114 244 C113 248, 110 250, 106 250 L92 250 C88 250, 85 248, 84 244 Z" fill="url(#potGrad)" />
+                  <rect x="74" y="198" width="50" height="10" rx="5" fill="#E39B72" />
+                </g>
+
+                <!-- 따뜻한 머그컵 (책상 우측) -->
+                <g filter="url(#itemShadow)">
+                  <!-- 김 -->
+                  <path d="M402 192 Q397 183 403 175" fill="none" stroke="#8FA89B" stroke-width="2.4" stroke-linecap="round" opacity="0.7" />
+                  <path d="M414 190 Q409 180 415 171" fill="none" stroke="#8FA89B" stroke-width="2.4" stroke-linecap="round" opacity="0.55" />
+                  <!-- 손잡이 -->
+                  <path d="M428 216 C440 216, 442 238, 428 238" fill="none" stroke="#E2D5BE" stroke-width="6" stroke-linecap="round" />
+                  <!-- 컵 본체 -->
+                  <rect x="388" y="206" width="42" height="44" rx="12" fill="url(#mugGrad)" stroke="#D4C7AE" stroke-width="1.5" />
+                  <!-- 커피 표면 & 초록 띠 -->
+                  <ellipse cx="409" cy="211" rx="16" ry="4.5" fill="#6F4E37" />
+                  <rect x="389" y="226" width="40" height="8" fill="#2D6A4F" opacity="0.82" />
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <figure class="scene-info-card">
+            <div class="scene-controls">
+              <span class="motion-status" id="motion-status" aria-live="polite">
+                <span class="status-dot" id="motion-status-dot" aria-hidden="true"></span>
+                <span id="motion-status-text">작업실 움직임 실행 중</span>
+              </span>
+              <button
+                type="button"
+                id="motion-toggle-btn"
+                class="btn btn-subtle"
+                aria-pressed="false"
+              >
+                움직임 멈춤
+              </button>
+            </div>
+            <figcaption class="scene-caption">
+              <strong>데이터 작업실 그림의 의미:</strong> 듀얼 모니터의 에너지·추세 차트, 차분히 집중하는 둥근 캐릭터, 따뜻한 나무 책상과 초록 식물·머그컵은 데이터를 꼼꼼히 살피면서도 지속 가능한 해법을 고민하는 윤서하의 분석 태도를 상징합니다.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 프로젝트 3개 -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Projects · 가상 사례 3선</span>
+          <h2 class="section-title">주요 데이터 프로젝트</h2>
+          <p class="section-subtitle">
+            각 카드의 <strong>상세 보기</strong> 버튼을 누르면 문제 정의, 분석 방법, 성과 및 모아빛에너지 연계 포인트를 확인할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-badge">별숲 데이터 챌린지</span>
+              <span class="project-period">2025.09 – 2025.12</span>
+            </div>
+            <h3 class="project-title">태양광 발전량 단기 예측 및 운영 대시보드</h3>
+            <p class="project-summary">
+              기상 관측 데이터와 시간대별 발전량 기록을 결합해 지역별 태양광 발전량을 예측하고, 운영자가 이상 변동을 한눈에 점검할 수 있는 시각화 화면을 설계했습니다.
+            </p>
+            <div class="project-metric">핵심 성과: 시계열 예측 오차(MAPE) 6.4% 달성 (가상)</div>
+            <ul class="tag-list">
+              <li class="tag-item">Python</li>
+              <li class="tag-item">SQL</li>
+              <li class="tag-item">시계열 예측</li>
+              <li class="tag-item">BI 대시보드</li>
+            </ul>
+            <button type="button" class="btn btn-secondary project-detail-btn" data-project-id="solar">
+              상세 보기
+            </button>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-badge">여울데이터랩 인턴</span>
+              <span class="project-period">2026.03 – 2026.08</span>
+            </div>
+            <h3 class="project-title">중소 사업장 전력 피크 수요 이상탐지 자동화</h3>
+            <p class="project-summary">
+              인턴 기간 동안 15분 단위 전력 사용 로그에서 비정상 피크 구간을 자동 분류하는 전처리 파이프라인과 주간 요약 리포트 템플릿을 구축했습니다.
+            </p>
+            <div class="project-metric">핵심 성과: 주간 리포트 작성 소요 시간 62% 단축 (가상)</div>
+            <ul class="tag-list">
+              <li class="tag-item">PostgreSQL</li>
+              <li class="tag-item">Pandas</li>
+              <li class="tag-item">이상탐지</li>
+              <li class="tag-item">리포트 자동화</li>
+            </ul>
+            <button type="button" class="btn btn-secondary project-detail-btn" data-project-id="peak">
+              상세 보기
+            </button>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-badge">솔담대 캡스톤</span>
+              <span class="project-period">2025.03 – 2025.06</span>
+            </div>
+            <h3 class="project-title">캠퍼스 건물 대기전력 절감 의사결정 모델</h3>
+            <p class="project-summary">
+              솔담대학교 경영정보학과 캡스톤 과제로 강의실 이용 시간표와 전력 소비 패턴을 매칭해 야간·주말 대기전력 절감 우선순위를 제안했습니다.
+            </p>
+            <div class="project-metric">핵심 성과: 시뮬레이션 기준 월간 대기전력 14% 절감안 도출 (가상)</div>
+            <ul class="tag-list">
+              <li class="tag-item">경영정보시스템</li>
+              <li class="tag-item">Tableau</li>
+              <li class="tag-item">회귀분석</li>
+              <li class="tag-item">프로세스 개선</li>
+            </ul>
+            <button type="button" class="btn btn-secondary project-detail-btn" data-project-id="campus">
+              상세 보기
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 역량 -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Competencies</span>
+          <h2 class="section-title">핵심 역량</h2>
+          <p class="section-subtitle">
+            데이터 추출부터 시각화, 경영 현장의 의사결정 연결까지 균형 있게 다룹니다.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>데이터 분석 &amp; 모델링</h3>
+            <p>결측·이상치 정제, 통계적 검증, 시계열 수요·발전량 예측 모델링에 강점이 있습니다.</p>
+            <div class="skill-bars">
+              <div>
+                <div class="skill-row-head"><span>Python (Pandas, Scikit-learn)</span><span class="skill-level">상</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+              </div>
+              <div>
+                <div class="skill-row-head"><span>SQL (PostgreSQL, MySQL)</span><span class="skill-level">상</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+              </div>
+              <div>
+                <div class="skill-row-head"><span>시계열·회귀 통계 분석</span><span class="skill-level">중상</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 82%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>BI 시각화 &amp; 대시보드</h3>
+            <p>비전공 실무자도 바로 판단할 수 있는 직관적인 지표 구조와 차트를 설계합니다.</p>
+            <div class="skill-bars">
+              <div>
+                <div class="skill-row-head"><span>Tableau / Power BI</span><span class="skill-level">중상</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 84%;"></div></div>
+              </div>
+              <div>
+                <div class="skill-row-head"><span>Excel / 스프레드시트 자동화</span><span class="skill-level">상</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 92%;"></div></div>
+              </div>
+              <div>
+                <div class="skill-row-head"><span>HTML·CSS·JS 웹 리포트</span><span class="skill-level">중</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 76%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>경영정보 &amp; 협업</h3>
+            <p>현업 요구사항을 데이터 스키마와 지표 정의서로 정리해 원활한 협업을 이끕니다.</p>
+            <div class="skill-bars">
+              <div>
+                <div class="skill-row-head"><span>KPI 설계 &amp; 요구사항 문서화</span><span class="skill-level">상</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+              </div>
+              <div>
+                <div class="skill-row-head"><span>Git / GitHub 버전 관리</span><span class="skill-level">중상</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 80%;"></div></div>
+              </div>
+              <div>
+                <div class="skill-row-head"><span>에너지·ESG 도메인 리서치</span><span class="skill-level">중상</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 82%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 활동 기록 -->
+    <section id="activities" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Activities · 가상 활동 이력</span>
+          <h2 class="section-title">활동 기록</h2>
+          <p class="section-subtitle">
+            인턴십, 데이터 경진대회, 학과 활동을 통해 꾸준히 실전 감각을 쌓아왔습니다.
+          </p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-date">2026.03 – 2026.08</span>
+            <div>
+              <h3 class="timeline-org">여울데이터랩</h3>
+              <div class="timeline-role">데이터 분석팀 인턴 (가상 이력)</div>
+              <p class="timeline-desc">
+                사업장 전력 사용 로그 정제 자동화 스크립트를 작성하고, SQL 뷰 기반의 주간 KPI 모니터링 리포트를 운영하며 현업 데이터 품질 관리 프로세스를 익혔습니다.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-date">2025.09 – 2025.12</span>
+            <div>
+              <h3 class="timeline-org">별숲 데이터 챌린지</h3>
+              <div class="timeline-role">팀장 · 우수상 수상 (가상 이력)</div>
+              <p class="timeline-desc">
+                4인 팀의 데이터 모델링과 발표를 총괄하며 기상·일사량 데이터 기반 태양광 발전량 예측 파이프라인과 운영자용 대시보드 시안을 완성했습니다.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-date">2024.03 – 2026.02</span>
+            <div>
+              <h3 class="timeline-org">솔담대학교 경영정보학과 데이터 학회 ‘한결’</h3>
+              <div class="timeline-role">운영진 및 SQL·Python 스터디 멘토 (가상 이력)</div>
+              <p class="timeline-desc">
+                후배 학회원 대상 주 1회 SQL 쿼리 실습과 공공 에너지 데이터 분석 미니 해커톤을 기획·진행했습니다.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-date">2023.03 – 현재</span>
+            <div>
+              <h3 class="timeline-org">솔담대학교 경영정보학과</h3>
+              <div class="timeline-role">학부 재학 중 (가상 이력)</div>
+              <p class="timeline-desc">
+                데이터베이스설계, 경영통계, 비즈니스 애널리틱스, 정보시스템분석및설계 등 전공 핵심 과목을 이수하며 데이터와 경영 의사결정의 접점을 탐구하고 있습니다.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 5. 연락처 -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2>모아빛에너지와 함께 성장할 준비가 되어 있습니다</h2>
+            <p>
+              데이터 분석, 에너지 운영 지표 설계, BI 대시보드 협업에 관심이 있으시다면 아래 가상 이메일로 편하게 연락해 주세요.
+            </p>
+          </div>
+
+          <div class="contact-email-box">
+            <span class="contact-email-label">가상 연락처 이메일</span>
+            <span class="contact-email-address" id="email-text">seoha@example.com</span>
+            <div class="contact-btn-row">
+              <button type="button" id="copy-email-btn" class="btn btn-cream">이메일 복사</button>
+              <a class="btn btn-outline-light" href="mailto:seoha@example.com?subject=%5B%EB%AA%A8%EC%95%84%EB%B9%9B%EC%97%90%EB%84%88%EC%A7%80%5D%20%EC%9C%A4%EC%84%9C%ED%95%98%20%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EB%AC%B8%EC%9D%98">
+                메일 앱 열기
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>윤서하 (Yoon Seoha)</strong> · 솔담대학교 경영정보학과 · seoha@example.com</p>
+      <p>본 페이지의 모든 인물, 학교, 기업(모아빛에너지·여울데이터랩), 대회(별숲 데이터 챌린지) 및 수치는 포트폴리오 예시용 가상 이력입니다.</p>
+    </div>
+  </footer>
+
+  <!-- 프로젝트 상세 보기 모달 -->
+  <div
+    id="project-modal"
+    class="modal-backdrop"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal-panel" tabindex="-1">
+      <div class="modal-header">
+        <div>
+          <span class="project-badge" id="modal-badge"></span>
+          <h3 class="modal-title" id="modal-title"></h3>
+        </div>
+        <button type="button" id="modal-close-btn" class="modal-close" aria-label="상세 보기 닫기">
+          닫기 ✕
+        </button>
+      </div>
+
+      <div class="modal-section">
+        <h4>프로젝트 개요 및 배경 (가상)</h4>
+        <p id="modal-background"></p>
+      </div>
+
+      <div class="modal-section">
+        <h4>담당 역할 및 분석 방법</h4>
+        <ul id="modal-methods"></ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>주요 성과</h4>
+        <p id="modal-result"></p>
+      </div>
+
+      <div class="modal-section">
+        <h4>모아빛에너지 직무 연계 포인트</h4>
+        <p id="modal-connection"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 복사 완료 알림 토스트 -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* -----------------------------------------
+       * 1. 프로젝트 상세 데이터 (가상 이력)
+       * ----------------------------------------- */
+      const PROJECT_DETAILS = {
+        solar: {
+          badge: '별숲 데이터 챌린지 · 2025.09 – 2025.12 (가상)',
+          title: '태양광 발전량 단기 예측 및 운영 대시보드',
+          background:
+            '별숲 데이터 챌린지에서 기상 변동성이 큰 계절에 발전량 예측 오차가 커지는 문제를 해결하기 위해, 3개년 시간대별 기상·일사량 데이터와 가상 발전소 출력 데이터를 통합 분석했습니다.',
+          methods: [
+            'SQL로 누락된 시간대 센서 로그를 보정하고 계절·시간대별 파생 변수를 생성했습니다.',
+            'Python(Pandas, LightGBM/회귀 비교)으로 24시간 단기 발전량 예측 모델을 구성했습니다.',
+            '예측값과 실측값의 괴리가 15%를 넘으면 강조 표시되는 운영자 대시보드 시안을 제작했습니다.'
+          ],
+          result:
+            '검증 데이터 기준 평균 절대 백분율 오차(MAPE) 6.4%를 달성했으며, 심사에서 실무 활용성과 시각화 명료성을 인정받아 우수상(가상)을 수상했습니다.',
+          connection:
+            '모아빛에너지의 신재생에너지 발전 예측 및 전력 중개 운영 업무에서 기상 변수 기반 모니터링 지표를 빠르게 설계·개선하는 데 기여할 수 있습니다.'
+        },
+        peak: {
+          badge: '여울데이터랩 인턴 · 2026.03 – 2026.08 (가상)',
+          title: '중소 사업장 전력 피크 수요 이상탐지 자동화',
+          background:
+            '여울데이터랩 데이터 분석팀 인턴으로 근무하며, 매주 수작업으로 점검하던 40여 개 가상 사업장의 15분 단위 전력 사용 로그를 자동 진단하는 체계를 만들었습니다.',
+          methods: [
+            'PostgreSQL 윈도우 함수를 활용해 사업장별 요일·시간대 기준 이동 평균과 표준편차를 산출했습니다.',
+            'Python 스크립트로 임계치 초과 피크 구간을 자동 분류하고 원인 유형(설비 가동, 계절 부하 등)을 태깅했습니다.',
+            '주간 KPI 요약 표와 그래프가 자동 생성되도록 리포트 템플릿을 표준화했습니다.'
+          ],
+          result:
+            '주간 리포트 작성 시간을 기존 4시간에서 약 1시간 30분으로 62% 단축했고, 이상 피크 누락 건수를 크게 줄였습니다(가상 수치).',
+          connection:
+            '모아빛에너지 고객 사업장의 에너지 효율 컨설팅과 반복 리포팅 자동화 업무에 즉시 적용 가능한 실무 경험입니다.'
+        },
+        campus: {
+          badge: '솔담대학교 경영정보학과 캡스톤 · 2025.03 – 2025.06 (가상)',
+          title: '캠퍼스 건물 대기전력 절감 의사결정 모델',
+          background:
+            '솔담대학교 경영정보학과 캡스톤 디자인 수업에서 야간·주말 비가동 시간대에도 높게 유지되는 강의동 전력 소비 원인을 규명하고 절감안을 도출했습니다.',
+          methods: [
+            '건물별 강의실 배정 시간표와 시간대별 전력 소비 데이터를 결합해 공실 대비 전력 지표를 정의했습니다.',
+            '다중 회귀분석으로 냉난방·조명·실습실 장비가 대기전력에 미치는 영향도를 추정했습니다.',
+            'Tableau 대시보드로 절감 효과가 큰 상위 5개 구역과 우선 조치 시나리오를 시각화했습니다.'
+          ],
+          result:
+            '시뮬레이션 기준 월간 대기전력 14% 절감 가능 시나리오를 제안해 학과 발표회에서 우수 프로젝트로 선정되었습니다(가상).',
+          connection:
+            '경영정보학적 관점에서 데이터 분석 결과를 현장 운영 정책과 비용 절감 목표로 연결하는 역량을 보여줍니다.'
+        }
+      };
+
+      /* -----------------------------------------
+       * 2. 모바일 메뉴 토글 & 내비게이션 활성 상태
+       * ----------------------------------------- */
+      const menuToggleBtn = document.getElementById('menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      const allNavLinks = document.querySelectorAll('.nav-link');
+
+      function setMobileMenu(open) {
+        if (!menuToggleBtn || !mobileNav) return;
+        mobileNav.classList.toggle('is-open', open);
+        menuToggleBtn.setAttribute('aria-expanded', String(open));
+        menuToggleBtn.textContent = open ? '메뉴 닫기' : '메뉴 열기';
+      }
+
+      if (menuToggleBtn) {
+        menuToggleBtn.addEventListener('click', function () {
+          const isOpen = mobileNav.classList.contains('is-open');
+          setMobileMenu(!isOpen);
+        });
+      }
+
+      allNavLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          setMobileMenu(false);
+          const href = link.getAttribute('href');
+          allNavLinks.forEach(function (item) {
+            item.classList.toggle('active', item.getAttribute('href') === href);
+          });
+        });
+      });
+
+      /* -----------------------------------------
+       * 3. 프로젝트 상세 보기 모달
+       * ----------------------------------------- */
+      const modal = document.getElementById('project-modal');
+      const modalPanel = modal ? modal.querySelector('.modal-panel') : null;
+      const modalCloseBtn = document.getElementById('modal-close-btn');
+      const modalBadge = document.getElementById('modal-badge');
+      const modalTitle = document.getElementById('modal-title');
+      const modalBackground = document.getElementById('modal-background');
+      const modalMethods = document.getElementById('modal-methods');
+      const modalResult = document.getElementById('modal-result');
+      const modalConnection = document.getElementById('modal-connection');
+      const detailButtons = document.querySelectorAll('.project-detail-btn');
+
+      let lastFocusedElement = null;
+
+      function openProjectModal(projectId) {
+        const data = PROJECT_DETAILS[projectId];
+        if (!data || !modal) return;
+
+        lastFocusedElement = document.activeElement;
+        modalBadge.textContent = data.badge;
+        modalTitle.textContent = data.title;
+        modalBackground.textContent = data.background;
+        modalResult.textContent = data.result;
+        modalConnection.textContent = data.connection;
+
+        modalMethods.innerHTML = '';
+        data.methods.forEach(function (step) {
+          const li = document.createElement('li');
+          li.textContent = step;
+          modalMethods.appendChild(li);
+        });
+
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (modalPanel) modalPanel.focus();
+      }
+
+      function closeProjectModal() {
+        if (!modal || !modal.classList.contains('is-open')) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+        }
+      }
+
+      detailButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openProjectModal(btn.getAttribute('data-project-id'));
+        });
+      });
+
+      if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeProjectModal);
+      }
+
+      if (modal) {
+        modal.addEventListener('click', function (event) {
+          if (event.target === modal) {
+            closeProjectModal();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          closeProjectModal();
+          setMobileMenu(false);
+        }
+      });
+
+      /* -----------------------------------------
+       * 4. 이메일 복사 기능 & 토스트
+       * ----------------------------------------- */
+      const copyEmailBtn = document.getElementById('copy-email-btn');
+      const toastEl = document.getElementById('toast');
+      let toastTimer = null;
+
+      function showToast(message) {
+        if (!toastEl) return;
+        toastEl.textContent = message;
+        toastEl.classList.add('is-visible');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toastEl.classList.remove('is-visible');
+        }, 2400);
+      }
+
+      function copyEmailFallback(text) {
+        const tempInput = document.createElement('textarea');
+        tempInput.value = text;
+        tempInput.setAttribute('readonly', '');
+        tempInput.style.position = 'fixed';
+        tempInput.style.left = '-9999px';
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        let ok = false;
+        try {
+          ok = document.execCommand('copy');
+        } catch (err) {
+          ok = false;
+        }
+        document.body.removeChild(tempInput);
+        return ok;
+      }
+
+      if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', function () {
+          const email = 'seoha@example.com';
+          if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            navigator.clipboard
+              .writeText(email)
+              .then(function () {
+                showToast('이메일(seoha@example.com)이 복사되었습니다.');
+              })
+              .catch(function () {
+                const ok = copyEmailFallback(email);
+                showToast(ok ? '이메일(seoha@example.com)이 복사되었습니다.' : '이메일 복사에 실패했습니다.');
+              });
+          } else {
+            const ok = copyEmailFallback(email);
+            showToast(ok ? '이메일(seoha@example.com)이 복사되었습니다.' : '이메일 복사에 실패했습니다.');
+          }
+        });
+      }
+
+      /* -----------------------------------------
+       * 5. .scene-motion 작업실 움직임 컨트롤러
+       *    - 약 7초 주기 위아래 10px 부유
+       *    - PC 마우스 추적 + 기울기 최대 30도 제한
+       *    - 스크롤 시 위로 최대 50px 이동
+       *    - requestAnimationFrame timestamp 기반
+       *    - 모바일 터치 시 마우스 추적 비활성화 및 화면 넘침 방지
+       *    - 움직임 멈춤 버튼 / prefers-reduced-motion / 숨겨진 탭 정지
+       * ----------------------------------------- */
+      const sceneMotion = document.getElementById('scene-motion');
+      const motionToggleBtn = document.getElementById('motion-toggle-btn');
+      const motionStatusText = document.getElementById('motion-status-text');
+      const motionStatusDot = document.getElementById('motion-status-dot');
+
+      const FLOAT_PERIOD_MS = 7000;
+      const FLOAT_AMPLITUDE_PX = 10;
+      const MAX_TILT_DEG = 30;
+      const MAX_SCROLL_UP_PX = 50;
+      const SCROLL_RANGE_PX = 500;
+      const PC_MOUSE_SHIFT_X = 12;
+      const PC_MOUSE_SHIFT_Y = 8;
+      const PC_TILT_X_SCALE = 12;
+      const PC_TILT_Y_SCALE = 15;
+
+      const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const finePointerQuery = window.matchMedia('(pointer: fine)');
+
+      let isTouchActive = 'ontouchstart' in window && !finePointerQuery.matches;
+      let userPaused = reducedMotionQuery.matches;
+      let rafId = null;
+      let lastTimestamp = null;
+      let elapsedMs = 0;
+
+      // 목표값과 현재 보간값
+      const target = {
+        mouseX: 0,
+        mouseY: 0,
+        rotX: 0,
+        rotY: 0,
+        scrollY: 0
+      };
+
+      const current = {
+        mouseX: 0,
+        mouseY: 0,
+        rotX: 0,
+        rotY: 0,
+        scrollY: 0
+      };
+
+      function clamp(val, min, max) {
+        return Math.max(min, Math.min(max, val));
+      }
+
+      function isMouseTrackingAllowed() {
+        return !isTouchActive && finePointerQuery.matches && window.innerWidth > 960;
+      }
+
+      function updateScrollTarget() {
+        const scrollTop = window.scrollY || window.pageYOffset || 0;
+        const progress = clamp(scrollTop / SCROLL_RANGE_PX, 0, 1);
+        target.scrollY = -progress * MAX_SCROLL_UP_PX;
+      }
+
+      function resetTransform() {
+        if (!sceneMotion) return;
+        sceneMotion.style.transform = 'translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg)';
+      }
+
+      function updateMotionUI() {
+        if (!motionToggleBtn || !motionStatusText || !motionStatusDot) return;
+
+        if (userPaused) {
+          motionToggleBtn.textContent = '움직임 재개';
+          motionToggleBtn.setAttribute('aria-pressed', 'true');
+          motionStatusDot.classList.add('is-paused');
+          motionStatusText.textContent = reducedMotionQuery.matches
+            ? '동작 줄이기 설정으로 정지됨'
+            : '작업실 움직임 멈춤';
+        } else {
+          motionToggleBtn.textContent = '움직임 멈춤';
+          motionToggleBtn.setAttribute('aria-pressed', 'false');
+          motionStatusDot.classList.remove('is-paused');
+          motionStatusText.textContent = isMouseTrackingAllowed()
+            ? '작업실 움직임 실행 중 (PC 마우스·스크롤 연동)'
+            : '작업실 움직임 실행 중 (터치 최적화)';
+        }
+      }
+
+      function stopAnimationLoop() {
+        if (rafId !== null) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+        lastTimestamp = null;
+      }
+
+      function renderFrame(timestamp) {
+        if (userPaused || document.hidden || !sceneMotion) {
+          stopAnimationLoop();
+          return;
+        }
+
+        if (lastTimestamp === null) {
+          lastTimestamp = timestamp;
+        }
+
+        const dt = Math.min(timestamp - lastTimestamp, 100);
+        lastTimestamp = timestamp;
+        elapsedMs += dt;
+
+        // 프레임 독립적 부드러운 보간
+        const ease = 1 - Math.exp(-dt * 0.0085);
+
+        if (!isMouseTrackingAllowed()) {
+          target.mouseX = 0;
+          target.mouseY = 0;
+          target.rotX = 0;
+          target.rotY = 0;
+        }
+
+        current.mouseX += (target.mouseX - current.mouseX) * ease;
+        current.mouseY += (target.mouseY - current.mouseY) * ease;
+        current.rotX += (target.rotX - current.rotX) * ease;
+        current.rotY += (target.rotY - current.rotY) * ease;
+        current.scrollY += (target.scrollY - current.scrollY) * ease;
+
+        // 약 7초 주기로 위아래 10px 천천히 부유
+        const floatY = Math.sin((elapsedMs / FLOAT_PERIOD_MS) * Math.PI * 2) * FLOAT_AMPLITUDE_PX;
+
+        // 최종 값 안전 클램핑 (기울기 최대 30도, 스크롤 위로 최대 50px)
+        const finalX = isMouseTrackingAllowed() ? clamp(current.mouseX, -PC_MOUSE_SHIFT_X, PC_MOUSE_SHIFT_X) : 0;
+        const clampedScrollY = clamp(current.scrollY, -MAX_SCROLL_UP_PX, 0);
+        const finalY = floatY + (isMouseTrackingAllowed() ? current.mouseY : 0) + clampedScrollY;
+        const finalRotX = isMouseTrackingAllowed() ? clamp(current.rotX, -MAX_TILT_DEG, MAX_TILT_DEG) : 0;
+        const finalRotY = isMouseTrackingAllowed() ? clamp(current.rotY, -MAX_TILT_DEG, MAX_TILT_DEG) : 0;
+
+        sceneMotion.style.transform =
+          'translate3d(' +
+          finalX.toFixed(2) +
+          'px, ' +
+          finalY.toFixed(2) +
+          'px, 0px) rotateX(' +
+          finalRotX.toFixed(2) +
+          'deg) rotateY(' +
+          finalRotY.toFixed(2) +
+          'deg)';
+
+        rafId = requestAnimationFrame(renderFrame);
+      }
+
+      function startAnimationLoop() {
+        if (userPaused || document.hidden || !sceneMotion) return;
+        if (rafId !== null) return;
+        lastTimestamp = null;
+        rafId = requestAnimationFrame(renderFrame);
+      }
+
+      // PC 마우스 추적 이벤트
+      window.addEventListener(
+        'mousemove',
+        function (event) {
+          if (userPaused || !isMouseTrackingAllowed()) return;
+          const vw = window.innerWidth || 1;
+          const vh = window.innerHeight || 1;
+          const nx = clamp((event.clientX / vw - 0.5) * 2, -1, 1);
+          const ny = clamp((event.clientY / vh - 0.5) * 2, -1, 1);
+
+          target.mouseX = nx * PC_MOUSE_SHIFT_X;
+          target.mouseY = ny * PC_MOUSE_SHIFT_Y;
+          target.rotY = clamp(nx * PC_TILT_Y_SCALE, -MAX_TILT_DEG, MAX_TILT_DEG);
+          target.rotX = clamp(-ny * PC_TILT_X_SCALE, -MAX_TILT_DEG, MAX_TILT_DEG);
+        },
+        { passive: true }
+      );
+
+      // 마우스가 창을 벗어나면 중앙으로 복귀
+      document.addEventListener('mouseleave', function () {
+        target.mouseX = 0;
+        target.mouseY = 0;
+        target.rotX = 0;
+        target.rotY = 0;
+      });
+
+      // 모바일 터치 감지 시 마우스 추적 즉시 비활성화
+      window.addEventListener(
+        'touchstart',
+        function () {
+          if (!isTouchActive) {
+            isTouchActive = true;
+            target.mouseX = 0;
+            target.mouseY = 0;
+            target.rotX = 0;
+            target.rotY = 0;
+            updateMotionUI();
+          }
+        },
+        { passive: true }
+      );
+
+      // 스크롤 추적
+      window.addEventListener('scroll', updateScrollTarget, { passive: true });
+      window.addEventListener('resize', function () {
+        updateScrollTarget();
+        updateMotionUI();
+      });
+
+      // 움직임 멈춤/재개 버튼
+      if (motionToggleBtn) {
+        motionToggleBtn.addEventListener('click', function () {
+          userPaused = !userPaused;
+          if (userPaused) {
+            stopAnimationLoop();
+            resetTransform();
+          } else {
+            updateScrollTarget();
+            startAnimationLoop();
+          }
+          updateMotionUI();
+        });
+      }
+
+      // prefers-reduced-motion 시스템 설정 변경 감지
+      function handleReducedMotionChange(event) {
+        userPaused = event.matches;
+        if (userPaused) {
+          stopAnimationLoop();
+          resetTransform();
+        } else {
+          updateScrollTarget();
+          startAnimationLoop();
+        }
+        updateMotionUI();
+      }
+
+      if (typeof reducedMotionQuery.addEventListener === 'function') {
+        reducedMotionQuery.addEventListener('change', handleReducedMotionChange);
+      } else if (typeof reducedMotionQuery.addListener === 'function') {
+        reducedMotionQuery.addListener(handleReducedMotionChange);
+      }
+
+      // 숨겨진 탭에서는 애니메이션 정지, 복귀 시 재개
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          stopAnimationLoop();
+        } else if (!userPaused) {
+          updateScrollTarget();
+          startAnimationLoop();
+        }
+      });
+
+      // 초기 상태 시작
+      updateScrollTarget();
+      updateMotionUI();
+      if (userPaused) {
+        resetTransform();
+      } else {
+        startAnimationLoop();
+      }
+    })();
+  </script>
+</body>
+</html>
